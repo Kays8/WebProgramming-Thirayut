@@ -26,7 +26,7 @@ var swiper = new Swiper(".home-slider", {
     spaceBetween:30,
     centeredSlides:true,
     autoplay:{
-        delay:1100,
+        delay:2100,
         disableOnInteraction:false,
     },
     pagination:{
@@ -34,4 +34,33 @@ var swiper = new Swiper(".home-slider", {
         clickable:true,
     },
     loop:true
+});
+
+//Review Section
+var swiper = new Swiper(".review-slider", {
+    spaceBetween:30,
+    centeredSlides:true,
+    autoplay:{
+        delay:2100,
+        disableOnInteraction:false,
+    },
+    pagination:{
+        el:".swiper-pagination",
+        clickable:true,
+    },
+    loop:true,
+    breakpoints:{
+        0:{
+            slidesPerView:1,
+        },
+        640:{
+            slidesPerView:2,
+        },
+         768:{
+            slidesPerView:2,
+        },
+         1024:{
+            slidesPerView:3,
+        },
+    }
 });
