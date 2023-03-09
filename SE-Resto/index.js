@@ -2,65 +2,74 @@ let menu = document.querySelector("#menu-bars");
 let navbar = document.querySelector("header .flex .navbar");
 
 //Show menu
-menu.onclick = () =>{
+menu.onclick = () => {
     menu.classList.toggle('fa-xmark');
     navbar.classList.toggle('active');
 };
 
 //Show SearchForm
 let search = document.querySelector("#search-icon");
-search.onclick = () =>{
+search.onclick = () => {
     let search_form = document.querySelector("#search-form");
     search_form.classList.toggle('active');
 };
 
 //Hide SearchForm
 let close_icon = document.querySelector("#close");
-close_icon.onclick = () =>{
+close_icon.onclick = () => {
     let search_form = document.querySelector("#search-form");
     search_form.classList.remove('active');
 };
 
 //Swiper fuction
 var swiper = new Swiper(".home-slider", {
-    spaceBetween:30,
-    centeredSlides:true,
-    autoplay:{
-        delay:2100,
-        disableOnInteraction:false,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2100,
+        disableOnInteraction: false,
     },
-    pagination:{
-        el:".swiper-pagination",
-        clickable:true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
-    loop:true
+    loop: true
 });
 
 //Review Section
 var swiper = new Swiper(".review-slider", {
-    spaceBetween:30,
-    centeredSlides:true,
-    autoplay:{
-        delay:2100,
-        disableOnInteraction:false,
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2100,
+        disableOnInteraction: false,
     },
-    pagination:{
-        el:".swiper-pagination",
-        clickable:true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
     },
-    loop:true,
-    breakpoints:{
-        0:{
-            slidesPerView:1,
+    loop: true,
+    breakpoints: {
+        0: {
+            slidesPerView: 1,
         },
-        640:{
-            slidesPerView:2,
+        640: {
+            slidesPerView: 2,
         },
-         768:{
-            slidesPerView:2,
+        768: {
+            slidesPerView: 2,
         },
-         1024:{
-            slidesPerView:3,
+        1024: {
+            slidesPerView: 3,
         },
     }
 });
+
+/*Loader Section*/
+function loader(){
+    document.querySelector(".loader-container").classList.add("fade-out")
+}
+function fadeOut(){
+    setInterval(loader, 2000)
+}
+window.onload = fadeOut;
